@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'Atividade1/css/Atividade1.css' %}">
+{%endblock%}
+
+{% block 'title' %}
+Pagina inicial
+{% endblock %}
+
+{% block 'dashboard'%}
+    <div class="container">
+        <form method = "POST" > 
+
+            <div class="form-group">
+                    <label for="aminoDNA">Informe as Bases Nitrogenadas</label>
+                    <input  name = 'DNA' type="text" class="form-control" id="aminoDNA" placeholder="Ex: A, G, C e T">
+                <div class ="form-check">
+                </div>
+            </div> 
+        <button type="submit" class="btn btn-primary">Verificar</button>
+        </form>
+    </div> 
+    <div>
+        <div class="Mensagemerror" role="alert" id = "Error">
+        </div>
+        {% if Error%}
+                {{ Error }}
+            
+
+        {% else %}
+            <ul> 
+                <li> {{ num_adenina }} </li>
+                <li> {{ num_guanina }} </li>
+                <li> {{ num_citosina }} </li>
+                <li> {{ num_timina }} </li>
+                <li> {{ nova_string }}</li>
+            </ul>
+        {% endif %}
+    
+    </div>
+{% endblock %}

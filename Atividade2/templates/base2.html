@@ -1,0 +1,32 @@
+{% extends "base.html"%}
+{% load static %}
+{% block 'title' %}
+Terra Plana
+{% endblock%}
+{% block 'dashboard' %}
+    <div class "container">
+        <div class "row">
+            <div class= "col-md card-dashboard">
+                <p class="text-card">Terra Plana</p>
+            </div>
+            <div class= "col-md card-dashboard">
+                <p class="text-card"> Cálculo do volume da Terra Plana</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <br>
+        <form action="{% url 'Atividade2' %}" method="POST">
+            <div class="col-md">
+                <p>Informe a Altura da Terra:</p>
+                <input type="text" class="form-control" placeholder="Ex: 2.5" name="h">
+            </div>
+            <br>
+            <div class="col-md">
+                <p>Informe o raio da Terra:</p>
+                <input type="text" class="form-control" placeholder="Ex: 2.5" name="r">
+            </div>
+            <br>
+            <input type="submit" value="Enviar" class="btn-principal">
+{% endblock %}
+ 
